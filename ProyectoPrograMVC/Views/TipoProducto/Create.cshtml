@@ -1,0 +1,27 @@
+﻿@model TipoProducto
+
+@{
+    ViewData["Title"] = "Creación de Tipos";
+}
+
+<h1>@ViewData["Title"]</h1>
+<p>En esta página se crean los tipos.</p>
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input asp-for="nombre" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Descripcion</label>
+        <input asp-for="descripcion" class="form-control" />
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+        <div class="col-6">
+            <a asp-action="Cancelar" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </div>
+</form>

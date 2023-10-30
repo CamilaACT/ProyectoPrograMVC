@@ -1,0 +1,24 @@
+﻿@model TallaProducto
+
+@{
+    ViewData["Title"] = "Editar Talla";
+}
+
+<h1>@ViewData["Title"]</h1>
+<p>En esta página se editan las tallas.</p>
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Talla</label>
+        <input asp-for="talla" class="form-control" />
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+        <div class="col-6">
+            <a asp-action="index" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </div>
+</form>
+

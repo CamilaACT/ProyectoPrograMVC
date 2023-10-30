@@ -1,0 +1,46 @@
+﻿<!-- Se debe incluir la biblioteca para importr los iconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+@model List<ProductoColorTalla>
+@{
+    ViewData["Title"] = "Productos en la Tienda";
+}
+<h1>@ViewData["Title"]</h1>
+<button type="button" class="btn btn-success" onclick="location.href='@Url.Action("Create","ProductoColorTalla")'">Nuevo Producto</button>
+
+<p>Esta página muestra la Lista de Productos Registrados.</p>
+
+<p>Buscar por ID:</p>
+<form method="get" action="@Url.Action("Search", "ProductoColorTalla")">
+    <div class="mb-3">
+        <label class="form-label">Nombre del Producto:</label>
+        <input type="text" name="ProductoNombre" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre del Producto</th>
+            <th scope="col">Color</th>
+            <th scope="col">Talla</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.idProductoColorTalla</td>
+                <td>@item.Producto.nombre</td>
+                <td>@item.ColorProducto.nombre</td>
+                <td>@item.TallaProducto.talla</td>
+                <td>@item.stock</td>
+                <td>@item.precio</td>
+                
+            </tr>
+        }
+    </tbody>
